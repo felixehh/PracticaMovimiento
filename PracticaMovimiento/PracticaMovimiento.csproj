@@ -96,5 +96,10 @@
   <ItemGroup>
     <Resource Include="father.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Carro.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

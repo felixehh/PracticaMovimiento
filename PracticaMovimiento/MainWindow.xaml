@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Canvas Name="miCanvas" KeyDown="miCanvas_KeyDown" Focusable="True">
-        <Image Name="imgFather"  Source="father.jpg" Width="500" Canvas.Left="140" Canvas.Top="138"></Image>
+        <Image Name="imgFather"  Source="father.jpg" Width="187" Canvas.Left="303" Canvas.Top="304" Height="105"></Image>
+        <Image Name="imgCarro"  Source="Carro.jpg" Width="187" Canvas.Left="601" Canvas.Top="90" Height="105" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
     </Canvas>
 </Window>
