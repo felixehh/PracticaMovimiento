@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:PracticaMovimiento"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Canvas Name="miCanvas" KeyDown="miCanvas_KeyDown" Focusable="True">
+    <Canvas>
+        <Canvas Visibility="Collapsed" Name="miCanvas" KeyDown="miCanvas_KeyDown" Focusable="True">
         <Image Name="imgFather"  Source="father.jpg" Width="187" Canvas.Left="303" Canvas.Top="304" Height="105"></Image>
         <Image Name="imgCarro"  Source="Carro.jpg" Width="187" Canvas.Left="601" Canvas.Top="90" Height="105" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
@@ -18,5 +19,12 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
+        <TextBlock x:Name="lblinterseccionX" Canvas.Left="10" TextWrapping="Wrap" Text="No hay interseccion en X" Canvas.Top="10"/>
+        <TextBlock x:Name="lblinterseccionY" Canvas.Left="10" TextWrapping="Wrap" Text="No hay interseccion en Y" Canvas.Top="31"/>
+        <TextBlock x:Name="lblcolision" Canvas.Left="10" TextWrapping="Wrap" Text="No hay colision" Canvas.Top="52"/>
+        </Canvas>
+        <Canvas Name="canvasGameOver">
+            <TextBlock Text="Game Over" />
+        </Canvas>
     </Canvas>
 </Window>

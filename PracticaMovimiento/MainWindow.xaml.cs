@@ -53,10 +53,43 @@ namespace PracticaMovimiento
                     var tiempoActual = stopwatch.Elapsed;
                     var deltaTime = tiempoActual - tiempoAnterior;
                     double leftCarroActual = Canvas.GetLeft(imgCarro);
-                    Canvas.SetLeft(imgCarro, leftCarroActual - (90 * deltaTime.TotalSeconds));
-                    if(Canvas.GetLeft(imgCarro) <= - 100)
+                    Canvas.SetLeft(imgCarro, leftCarroActual - (30 * deltaTime.TotalSeconds));
+                    if (Canvas.GetLeft(imgCarro) <= -100)
                     {
                         Canvas.SetLeft(imgCarro, 800);
+                    }
+
+                    //interseccion en X
+                    double xCarro = Canvas.GetLeft(imgCarro);
+                    double xFather = Canvas.GetLeft(imgFather);
+                    if (xFather + imgFather.Width >= xCarro && xFather <= xCarro + imgCarro.Width)
+                    {
+                        lblinterseccionX.Text = "SI HAY INTERSECCION EN X AAAAAAA";
+                    }
+                    else
+                    {
+                        lblinterseccionX.Text = "no hay interseccion en x :(";
+                    }
+
+                    //interseccion en Y
+                    double yCarro = Canvas.GetTop(imgCarro);
+                    double yFather = Canvas.GetTop(imgFather);
+                    if (yFather + imgFather.Height >= yCarro && yFather <= yCarro + imgCarro.Height)
+                    {
+                        lblinterseccionY.Text = "SI HAY INTERSECCION EN Y OOOOOOOOo";
+                    }
+                    else
+                    {
+                        lblinterseccionY.Text = "No hay en y :l";
+                    }
+
+                    if (xFather + imgFather.Width >= xCarro && xFather <= xCarro + imgCarro.Width && yFather + imgFather.Height >= yCarro && yFather <= yCarro + imgCarro.Height)
+                    {
+                        lblcolision.Text = "HAY COLISION HAHSAFASF";
+                    }
+                    else
+                    {
+                        lblcolision.Text = "no hay colision :y";
                     }
                     tiempoAnterior = tiempoActual;
                 }
